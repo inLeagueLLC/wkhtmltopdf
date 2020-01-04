@@ -1,0 +1,42 @@
+{
+    "name":"wkhtmltopdf",
+    "version":"1.0.0",
+    "author":"Samuel Knowlton <sam@inleague.io>",
+    "homepage":"https://github.com/inLeagueLLC/wkhtmltopdf",
+    "documentation":"https://github.com/inLeagueLLC/wkhtmltopdf",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/inLeagueLLC/wkhtmltopdf"
+    },
+    "private":false,
+    "projectURL":"https://github.com/inLeagueLLC/wkhtmltopdf",
+    "bugs":"https://github.com/inLeagueLLC/wkhtmltopdf/issues",
+    "slug":"wkhtmltopdf",
+    "shortDescription":"A CFML (Coldbox) wkhtmltopdf wrapper",
+    "description":"A CFML (Coldbox) wkhtmltopdf wrapper",
+    "keywords": [
+        "wkhtmltopdf",
+        "pdf"
+    ],
+    "type":"modules",
+    "license":[
+        {
+            "type":"MIT",
+            "URL":"https://github.com/inLeagueLLC/wkhtmltopdf/LICENSE.txt"
+        }
+    ],
+    "dependencies":{
+        "hyper" : "^2.0.0"
+    },
+    "devDependencies":{
+        "testbox":"^2.4.0+80"
+    },
+    "installPaths":{
+        "hyper" : "modules/hyper"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ]
+}
