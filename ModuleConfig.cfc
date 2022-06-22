@@ -35,7 +35,7 @@ component {
 		settings = {
 			pdfhost			=  'wkhtmltopdf',		// hostname for wkhtmltopdf container. Default assumes a internal network hostname lookup, but a FQDN is fine (e.g. wkhtmltopdf.mycompany.com). Do not include http/https
 			pdfport			=	3000,				// http/s port for wkhtmltopdf service. default of 3000 is used by the wkhtmltopdf docker container
-			pdfsecure		=	false,				// false = http, true = https
+			pdfsecure		=	false				// false = http, true = https
 		};
 
 	}
