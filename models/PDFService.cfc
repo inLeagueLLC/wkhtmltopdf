@@ -25,11 +25,12 @@ component {
     public binary function toPDF( required string content, struct options = {}, string output = 'pdf' ) {
         
         var isURL = isValid( "url", arguments.content );
+        var contentType = isURL ? "url" : "content";
         var requestArgs = {
             "output" : arguments.output,
             "requests" : [
                 {
-                    ( isURL ? "url" : "content" ) : arguments.content,
+                    contentType : arguments.content,
                     "options" : arguments.options
                 }
             ]
