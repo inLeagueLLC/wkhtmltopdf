@@ -1,6 +1,6 @@
 # wkhtmltopdf (A CFML/Coldbox Wrapper) Version History
 
-## v1.0.0 (June 27, 2022)
+## v1.1.0 (June 27, 2022)
 
 * Fixed ACF support by detecting the server engine and adding a .toByteArray() to the HTTP response
 * Fixed URL/content detection across engines
