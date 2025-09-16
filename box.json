@@ -1,6 +1,6 @@
 {
     "name":"wkhtmltopdf",
-    "version":"1.1.0",
+    "version":"1.2.0",
     "author":"Samuel Knowlton <sam@inleague.io>",
     "homepage":"https://github.com/inLeagueLLC/wkhtmltopdf",
     "documentation":"https://github.com/inLeagueLLC/wkhtmltopdf",
@@ -8,7 +8,7 @@
         "type":"git",
         "URL":"https://github.com/inLeagueLLC/wkhtmltopdf"
     },
-    "location": "https://github.com/inLeagueLLC/wkhtmltopdf/archive/refs/tags/1.1.0.zip",
+    "location": "https://github.com/inLeagueLLC/wkhtmltopdf/archive/refs/tags/1.2.0.zip",
     "private":false,
     "projectURL":"https://github.com/inLeagueLLC/wkhtmltopdf",
     "bugs":"https://github.com/inLeagueLLC/wkhtmltopdf/issues",
