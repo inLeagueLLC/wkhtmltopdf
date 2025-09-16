@@ -6,7 +6,7 @@ component {
 	this.author 			= "Samuel Knowlton <sam@inleague.io>";
 	this.webURL 			= "https://www.inleague.io";
 	this.description 		= "A Coldbox wrapper for wkhtmltopdf, inspired by Ryan Guill and the wkhtmltopdf-as-a-service Docker container (https://github.com/MotorsportReg/docker-wkhtmltopdf-service) though Docker is not required ";
-	this.version			= "1.0.0";
+	this.version			= "1.2.0";
 	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
 	this.viewParentLookup 	= false;
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa

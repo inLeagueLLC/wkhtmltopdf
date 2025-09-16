@@ -3,7 +3,15 @@ After years of wrestling with cfdocument from Adobe and Lucee, we centralized ou
 
 https://github.com/MotorsportReg/docker-wkhtmltopdf-service
 
-All this module does is provide a friendly interface to the API for that service. **This module does not contain the wkhtmltopdf utility or do any conversion by itself**. You must be running wkhtmltopdf as a service for this module to do any good.
+All this module does is provide a friendly interface to the API for that service. **This module does not contain the wkhtmltopdf utility or do any conversion by itself**. You must be running wkhtmltopdf as a service for this module to do any good. 
+
+## A note on wkhtmltopdf (it's obsolete)
+
+The [wkhtmltopdf library](https://github.com/wkhtmltopdf/wkhtmltopdf) is deprecated due to its reliance on the QT rendering library. The only way that wkhtmltopdf should ever be used is in an isolated web service with no access to the Internet. There are newer HTML to PDF services out there. This library is strictly for apps that rely on the 'it just works' aspect of wkhtmltopdf.
+
+### So why does this module exist?
+
+This module just wraps a web service that expects HTML and produces a PDF. It could very easily wrap a different web service aside from wkhtmlpdf. PRs accepted!
 
 ### Inspiration 
 While Coldbox's `renderData()` convention makes it very easy to convert anything to PDF (or JSON, XML, or HTML), you're at the mercy of the application engine's PDF library -- and you have to include the PDF extension in your deployment (for Lucee) or the Adobe PDF Service (for ACF). 
@@ -103,6 +111,8 @@ PDFService returns a binary object. We can still take advantage of `renderData()
 Alternatively, you could call `cfcontent` directly with a MIME-type of `application/pdf`. `renderData()` does this for us and also adds appropriate headers for content-length.
 
 ### Error Handling
+
+There is specific handling for timeouts (504) if Hyper tries to reach wkhtmltopdf and can't. By default, it will try once with a timeout of 10 seconds. On occasion, if you are sending large chunks of content to wkhtmltopdf, you might want to retry the HTTP call. The `retries` and `timeout` arguments to `toPDF()` and `toPDFMultiple()` allow you to override the default behavior of '0 retries, 10 second timeout.'
 
 If PDFService gets anything other than a `200 OK` from wkhtmltopdf, either because it can't connect or the wkhtmltopdf service returns an error code, it will throw an exception along with the HTTP Status code from the attempted connection to wkhtmltopdf. 
 
