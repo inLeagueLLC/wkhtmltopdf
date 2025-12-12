@@ -9,9 +9,13 @@ All this module does is provide a friendly interface to the API for that service
 
 The [wkhtmltopdf library](https://github.com/wkhtmltopdf/wkhtmltopdf) is deprecated due to its reliance on the QT rendering library. The only way that wkhtmltopdf should ever be used is in an isolated web service with no access to the Internet. There are newer HTML to PDF services out there. This library is strictly for apps that rely on the 'it just works' aspect of wkhtmltopdf.
 
+### What to use instead
+
+We recommend [Gotenberg](https://github.com/gotenberg/gotenberg).
+
 ### So why does this module exist?
 
-This module just wraps a web service that expects HTML and produces a PDF. It could very easily wrap a different web service aside from wkhtmlpdf. PRs accepted!
+This module just wraps a web service that expects HTML and produces a PDF. It could very easily wrap a different web service aside from wkhtmlpdf. We will probably update it to support alternative services (like Gotenberg), but until we do ... PRs accepted!
 
 ### Inspiration 
 While Coldbox's `renderData()` convention makes it very easy to convert anything to PDF (or JSON, XML, or HTML), you're at the mercy of the application engine's PDF library -- and you have to include the PDF extension in your deployment (for Lucee) or the Adobe PDF Service (for ACF). 
@@ -21,7 +25,7 @@ The wkhtmltopdf module was inspired by Ryan Guill's recommendation of the above 
 A simple request to wkhtmltopdf, whether you're executing it locally or using an API to a Docker container, doesn't need even a small module -- cfhttp will do the job. But if you're making these requests all over your application, it's nice to centralize common settings and the relevant code. For more complicated PDFs with multiple sources (or sources combined from URLs and strings), we enjoy even more benefit from re-using code. We also wanted to memorialize Ryan's recommendation for a wonderful and simple Docker "edition" of wkhtmltopdf and centralize our settings for the hostname, port, and TLS status of the wkhtmltopdf service.
 
 ## Requirements:
-* Supported Engines: Lucee 5+, Adobe Coldfusion 11+
+* Supported Engines: Lucee 5+ (Adobe Coldfusion will probably work, but we do not support it)
 * a wkhtmltopdf service accessible to your CF engine
 * Coldbox. It would not take much doing to re-write the module without Wirebox or Hyper ... but just use Coldbox.
 
